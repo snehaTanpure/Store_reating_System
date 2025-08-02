@@ -19,10 +19,10 @@ let Admin=()=>{
                      <div className="col-10">
                       <Routes>
                          <Route path="/" element={<AdminDash/>}/>
-                         <Route path="/addUser" element={<AddUser/>}/>
-                         <Route path="/viewUser" element={<ViewUser/>}/>
-                         <Route path="/addStore" element={<AddStore/>}/>
-                         <Route path="/viewStore" element={<ViewStore/>}/>
+                         <Route path="addUser" element={<AddUser/>}/>
+                         <Route path="viewUser" element={<ViewUser/>}/>
+                         <Route path="addStore" element={<AddStore/>}/>
+                         <Route path="viewStore" element={<ViewStore/>}/>
 
 
                       </Routes>
