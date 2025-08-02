@@ -2,10 +2,21 @@ import React from 'react';
 
 let OwnerDash=()=>{
 
-return<>
-
-        <h1>Owner dash</h1>
+    
+  
+     
         
+  
+return<> 
+
+   
+
+        <div className='container-fluid bg-danger '>
+       <center><h1> Welcome of Owner Dashboard ! </h1></center> 
+        </div>
+
+
+
 </>
 
 }

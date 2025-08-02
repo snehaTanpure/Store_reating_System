@@ -18,6 +18,7 @@ function App() {
 
           <Route path="/*" element={<Start/>} />
           <Route path="/owner/*" element={<Owner />} />
+          
         </Routes>
         </BrowserRouter>
        </div>

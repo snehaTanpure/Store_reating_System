@@ -1,0 +1,58 @@
+
+.nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px; /* space between links */
+  align-items: center;
+
+}
+
+/* Navbar container */
+
+.nav1 {
+  display: flex;
+  justify-content:center; /* space between items */
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #343a40; /* dark background */
+  color: #fff;
+  width: 100%;
+  height: 60px;
+ 
+}
+
+/* Links inside navbar */
+.nav-item a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 12px;
+  transition: background 0.3s ease, color 0.3s ease;
+  border-radius: 6px;
+}
+
+/* Hover effect */
+.nav-item a:hover {
+  background-color: #495057;
+  color: #f8f9fa;
+  
+}
+
+/* Optional: Add brand/logo */
+.brand {
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+/* Responsive navbar */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
