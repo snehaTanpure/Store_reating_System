@@ -1,15 +1,25 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Owner from "./owner/owner.jsx";
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import Owner from './owner/owner'
+import './App.css'
+import { BrowserRouter } from 'react-router-dom'
 
 function App() {
+  
+
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Owner />} />
-      </Routes>
-    </BrowserRouter>
-  );
+    <>
+       <div className="container-fluid w-100 p-0">
+        <BrowserRouter>
+        
+        <Owner/>
+     
+        </BrowserRouter>
+       </div>
+        
+    </>   
+  )
 }
 
 export default App;
