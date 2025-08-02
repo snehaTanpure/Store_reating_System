@@ -8,7 +8,7 @@ const Usidebar = () => {
      <aside className="admin-sidebar p-3">
       <div className="accordion" id="adminAccordion">
         <div className="text-center mb-4">
-          <h3><Link to="/guser" className="admin-logo"> 👤User Dashboard</Link></h3>
+          <h2><Link to="/guser" className="admin-logo"> 👤User Dashboard</Link></h2>
         </div>
 
        <div className="accordion-item">

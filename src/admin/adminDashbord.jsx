@@ -13,7 +13,7 @@ let AdminDash=()=>{
            </div>
 
 
-            <div className='container w-25 p-5 m-3 bg-secondary shadow-lg rounded'>
+           <div className='container w-25 p-5 m-3 bg-secondary shadow-lg rounded'>
 
             <h3>Total Store</h3>
 

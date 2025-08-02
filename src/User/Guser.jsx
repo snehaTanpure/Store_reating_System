@@ -7,10 +7,10 @@ const Guser=()=>{
     return<>
         <div className="row p-0">
             <div className="col-12 d-flex">
-                <div className="col-3">
+                <div className="col-2">
                      <Usidebar/>
                 </div>
-                <div className="col-9">
+                <div className="col-10">
                     
             <Routes>
                 <Route path="/" element={<Userdashboard/>}/>

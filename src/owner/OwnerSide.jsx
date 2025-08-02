@@ -5,12 +5,12 @@ import { Link } from "react-router-dom";
 let OwnerSide=()=>{
 
     return<>
+
     <aside className="admin-sidebar p-3">
       <div className="accordion" id="adminAccordion">
 
         <div className="mb-5">
               <Link to="/owner" className="btn btn-outline-danger w-100"> 👲Owner Dashborad </Link>
-
         </div>
 
       

@@ -2,18 +2,21 @@ import React from 'react'
 
 
 let homeback={
-    BackgroundImage:" url('homebackimg.avif') "
+ 
+     backgroundImage: "url('Homepageimg.avif')",
+    height:"90vh",
+    backgroundSize:'100% 100%',
+    opacity:'1'
+   
 }
 
 
 let Home=()=>{
     return<>
 
-            <div style={homeback}>
-
-                 <h1>Home Page</h1>
-
-            </div>
+           <div className="container-fluid m-0 w-100" style={homeback}>
+             
+           </div>
            
     </>
 
