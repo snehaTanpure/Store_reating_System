@@ -6,6 +6,7 @@ import { Routes,Route } from "react-router-dom";
 let Owner=()=>{
 
     return<>
+    
     <div className="container-fluid p-0">
         <div className="row">
             <div className="col-12 d-flex">
