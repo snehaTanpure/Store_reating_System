@@ -3,7 +3,7 @@ import React from 'react';
 let ViewStore=()=>{
 
     return<>
-            <div className="container mt-5 p-3">
+            <div className="container mt-5 p-3 shadow-lg">
                 <table className="table table-striped">
                     <thead>
                         <tr>

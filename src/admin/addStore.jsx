@@ -3,7 +3,7 @@ import React from 'react';
 let AddStore=()=>{
 
     return<>
-           <div className="container w-50 p-3 mt-5 border">
+           <div className="container w-50 p-3 mt-5 border shadow-lg bg-light">
               <h1>Add Store</h1>
             <div className="form">
                 <div className="form-group mb-3">
@@ -21,7 +21,7 @@ let AddStore=()=>{
                     </select>
                 </div>
                 <div className="form-group mb-3 mt-5">
-                    <input type="button" className="form-control btn btn-primary" value="Add Store" />
+                    <input type="button" className="form-control btn btn-dark" value="Add Store" />
                 </div>
                 </div>
            </div> 

@@ -3,7 +3,7 @@ import React from 'react';
 let AddUser=()=>{
 
     return<>
-            <div className="container w-50 border shadow mt-5 p-3">
+            <div className="container w-50 border shadow mt-5 p-3 shadow-lg bg-light">
                 <h1>Add User</h1>
                 <div className="form">
                     <div className="form-group mb-3">
@@ -31,7 +31,7 @@ let AddUser=()=>{
                           </select>
                     </div>
                    <div className="form-group mb-3">
-                        <input type="button" className="form-control btn btn-primary" value="Register" />
+                        <input type="button" className="form-control btn btn-dark" value="Register" />
                     </div>
                 </div>
             </div>

@@ -4,7 +4,7 @@ let ViewUser=()=>{
 
     return<>
           <div className="container mt-5">
-            <table className="table table-striped border">
+            <table className="table table-striped border shadow-lg">
                 <thead>
                     <tr>
                         <th>Name</th>
