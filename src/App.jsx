@@ -5,6 +5,7 @@ import Owner from './owner/owner'
 import Admin from './admin/admin'
 import './App.css'
 import Start from './home/start'
+import Guser from './User/Guser'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="/*" element={<Start/>} />
           <Route path="/owner/*" element={<Owner />} />
           <Route path="/admin/*" element={<Admin/>}/>
+          <Route path="/guser/*" element={<Guser/>}/>
         </Routes>
         
         

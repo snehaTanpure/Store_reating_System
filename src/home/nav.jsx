@@ -20,6 +20,9 @@ let Nav = () => {
         <li className="nav-item">
           <Link to="/admin">Admin Panel</Link>
         </li>
+         <li className="nav-item">
+          <Link to="/guser">user Panel</Link>
+        </li>
       </ul>
 
     </div>
