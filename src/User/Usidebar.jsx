@@ -8,7 +8,7 @@ const Usidebar = () => {
      <aside className="admin-sidebar p-3">
       <div className="accordion" id="adminAccordion">
         <div className="text-center mb-4">
-          <h3><Link to="/" className="admin-logo"> 👤User Dashboard</Link></h3>
+          <h3><Link to="/guser" className="admin-logo"> 👤User Dashboard</Link></h3>
         </div>
 
        <div className="accordion-item">
@@ -21,8 +21,8 @@ const Usidebar = () => {
           <div id="studentCollapse" className="accordion-collapse collapse" data-bs-parent="#adminAccordion">
             <div className="accordion-body">
   
-              <Link to="/userrating" className="btn btn-outline-danger w-100">🌟User Rating Form🌟</Link>
-              <Link to="/" className="btn btn-outline-danger w-50 mx-5 mt-3" >LOGOUT</Link>
+              <Link to="/guser/userrating" className="btn btn-outline-danger w-100">🌟User Rating Form🌟</Link>
+              <Link to="/guser" className="btn btn-outline-danger w-50 mx-5 mt-3" >LOGOUT</Link>
             </div>
           </div>
         </div>

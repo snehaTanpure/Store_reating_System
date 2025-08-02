@@ -1,37 +1,35 @@
 import React from "react";
-import "./Userrating.css";
+
 
 const Userrating = () => {
   return <>
-    <div className="container">
+    <div className="container w-50 border shadow" style={{marginTop:"130px",marginLeft:"200px"}}>
       <h1>User Rating</h1>
       <p className="form-subtitle">We Value Your Feedback</p>
       
-      <form>
-        <label>
-          <span>Store Name:</span>
-          <select required>
-            <option value="">--Select Store--</option>
-            <option value="store1">Store 1</option>
-            <option value="store2">Store 2</option>
-            <option value="store3">Store 3</option>
-          </select>
-        </label>
+         <div className="form">
+          <div className="form-group mb-3">
+            <label htmlFor="" className="form-label">select Store name</label>
+            <select name="" id="" className="form-control">
+              <option value="">select option</option>
+              <option value="">2</option>
+              <option value="">3</option>
+            </select>
+          </div>
+          <div className="form-group mb-3">
+            <label htmlFor="" className="form-label">Rating</label>
+            <select name="" id="" className="form-control">
+              <option value="">select Option</option>
+              <option value="">2</option>
+              <option value="">3</option>
+            </select>
+          </div>
+          <div className="form-group mb-3">
+            <input type="button" className="form-control btn btn-primary" value="Submit"/>
+          </div>
+         </div>
 
-        <label>
-          <span>Rating:</span>
-          <select required>
-            <option value="">--Select Rating--</option>
-            <option value="1">1 Star</option>
-            <option value="2">2 Stars</option>
-            <option value="3">3 Stars</option>
-            <option value="4">4 Stars</option>
-            <option value="5">5 Stars</option>
-          </select>
-        </label>
-
-        <button type="submit">Submit</button>
-      </form>
+        
     </div>
   
 
