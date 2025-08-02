@@ -3,7 +3,7 @@ import React from "react";
 
 const Userrating = () => {
   return <>
-    <div className="container w-50 border shadow" style={{marginTop:"130px",marginLeft:"200px"}}>
+    <div className="container-fluid w-50 border shadow" style={{marginTop:"130px",marginLeft:"200px"}}>
       <h1>User Rating</h1>
       <p className="form-subtitle">We Value Your Feedback</p>
       
