@@ -1,6 +1,6 @@
-import React from "react";
+import React,{useState}from "react";
 import { Link } from "react-router-dom";
-
+import {loginUser} from '../service/service.js';
 let Login = () => {
 
   const bgStyle = {
@@ -33,13 +33,25 @@ let Login = () => {
   };
 
 
-  // <div style={bgStyle}>
-  //     <div style={overlayStyle}>
+  let [login,setLogin]=useState({
+    email:'',
+    password:''
+  });
 
-  //      </div>
-  //  </div>
+let eventLogin=(e)=>{
 
-  
+setLogin({
+  ...login,
+  [e.target.name]:e.target.value
+});
+}
+
+let verifyLogin=async()=>{
+    let result=await loginUser(login.email,login.password);
+    console.log(result);
+
+
+}
 
   return (
     <>
@@ -56,16 +68,16 @@ let Login = () => {
           <div className="form">
             <div className="form-group mb-3">
               <label className="form-label">Enter the Username</label>
-              <input type="text" className="form-control" />
+              <input type="text" name="email" id="email" value={login.email} className="form-control"  onChange={(e)=>{eventLogin(e)}} />
             </div>
 
             <div className="form-group mb-3">
               <label className="form-label">Enter the Password</label>
-              <input type="password" className="form-control" />
+              <input type="password" name="password" id="password" value={login.password} className="form-control"  onChange={(e)=>{eventLogin(e)}}/>
             </div>
 
             <div className="form-group mb-3">
-              <input type="button" value="Login" className="form-control btn btn-dark" />
+              <input type="button" value="Login" className="form-control btn btn-dark" onClick={verifyLogin}/>
               </div>
           </div>
 
