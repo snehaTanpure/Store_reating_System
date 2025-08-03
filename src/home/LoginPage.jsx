@@ -1,5 +1,7 @@
-import React from "react";
+
+import React,{useState} from "react";
 import { Link } from "react-router-dom";
+import {loginUser} from "../service/service.js"
 
 let Login = () => {
 
@@ -33,13 +35,26 @@ let Login = () => {
   };
 
 
-  // <div style={bgStyle}>
-  //     <div style={overlayStyle}>
-
-  //      </div>
-  //  </div>
-
   
+
+    let [login,setLogin]=useState(
+      {
+        email:'',
+        password:''
+      }
+    )
+
+    let eventLogin=(e)=>{
+      setLogin({
+        ...login,
+        [e.target.name]:e.target.value
+      });
+    }
+
+    let verifyLogin=()=>{
+        let result=loginUser(login.email,login.password);
+         console.log(result);
+    }
 
   return (
     <>
@@ -56,16 +71,16 @@ let Login = () => {
           <div className="form">
             <div className="form-group mb-3">
               <label className="form-label">Enter the Username</label>
-              <input type="text" className="form-control" />
+              <input type="text" className="form-control" id="email" name="email" value={login.email} onChange={(e)=>{eventLogin(e)}} />
             </div>
 
             <div className="form-group mb-3">
               <label className="form-label">Enter the Password</label>
-              <input type="password" className="form-control" />
+              <input type="password" className="form-control" id="password" name="password" value={login.password} onChange={(e)=>{eventLogin(e)}}/>
             </div>
 
             <div className="form-group mb-3">
-              <input type="button" value="Login" className="form-control btn btn-dark" />
+              <input type="button" value="Login" className="form-control btn btn-dark"  onClick={verifyLogin}/>
               </div>
           </div>
 
