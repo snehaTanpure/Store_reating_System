@@ -23,8 +23,6 @@ let Admin=()=>{
                          <Route path="viewUser" element={<ViewUser/>}/>
                          <Route path="addStore" element={<AddStore/>}/>
                          <Route path="viewStore" element={<ViewStore/>}/>
-
-
                       </Routes>
                      </div>
                 </div>
