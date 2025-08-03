@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 let Login = () => {
 
-/*
   const bgStyle = {
     backgroundImage: "url('loginbackimg.jpg')",
     backgroundSize: "cover",
@@ -34,17 +33,20 @@ let Login = () => {
   };
 
 
-  <div style={bgStyle}>
-      <div style={overlayStyle}>
+  // <div style={bgStyle}>
+  //     <div style={overlayStyle}>
 
-       </div>
-   </div>
-  */
+  //      </div>
+  //  </div>
+
   
 
   return (
     <>
       
+      <div style={bgStyle}>
+      <div style={overlayStyle}>
+
 
         <div className="container bg-light mt-5 w-25 p-3 shadow-lg" >
            <center>
@@ -64,16 +66,18 @@ let Login = () => {
 
             <div className="form-group mb-3">
               <input type="button" value="Login" className="form-control btn btn-dark" />
-            </div>
+              </div>
           </div>
 
           <center>
             <span>
-              Don't have an account ? <Link to="/abc">Register</Link>
+              Don't have an account ? <Link to="/Register">Register</Link>
             </span>
           </center>
         </div>
       
+       </div>
+   </div>
     </>
   );
 };
