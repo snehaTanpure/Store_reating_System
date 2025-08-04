@@ -1,14 +1,15 @@
 import React,{useState}from "react";
-import { Link } from "react-router-dom";
+import { Link ,useNavigate } from "react-router-dom";
 import {loginUser} from '../service/service.js';
 let Login = () => {
 
+    let navigate=useNavigate();
   const bgStyle = {
     backgroundImage: "url('loginbackimg.jpg')",
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
-    height: "100vh",
+    height: "92vh",
     position: "relative",
     display: "flex",
     justifyContent: "center",
@@ -48,7 +49,22 @@ setLogin({
 
 let verifyLogin=async()=>{
     let result=await loginUser(login.email,login.password);
-    console.log(result);
+    
+
+
+    if(result.role==='admin'){
+        navigate("/admin",{ state: { user: result } });
+
+    }
+    else if(result.role==='user'){
+        navigate("/guser",{ state: { user: result } });
+    }
+    else if(result.role==='owner'){
+          navigate("/owner",{ state: { user: result } });
+    }
+    else{
+      alert("invalid user id");
+    }
 
 
 }
@@ -60,7 +76,7 @@ let verifyLogin=async()=>{
       <div style={overlayStyle}>
 
 
-        <div className="container bg-light mt-5 w-25 p-3 shadow-lg" >
+        <div className="container bg-light w-25 p-4 border rounded shadow-lg " style={{marginTop:'155px'}} >
            <center>
             <h1>Login</h1>
           </center>
@@ -68,16 +84,16 @@ let verifyLogin=async()=>{
           <div className="form">
             <div className="form-group mb-3">
               <label className="form-label">Enter the Username</label>
-              <input type="text" name="email" id="email" value={login.email} className="form-control"  onChange={(e)=>{eventLogin(e)}} />
+              <input type="text" name="email" id="email" value={login.email} className="form-control border rounded-pill" placeholder="Enter the Username" onChange={(e)=>{eventLogin(e)}} />
             </div>
 
             <div className="form-group mb-3">
               <label className="form-label">Enter the Password</label>
-              <input type="password" name="password" id="password" value={login.password} className="form-control"  onChange={(e)=>{eventLogin(e)}}/>
+              <input type="password" name="password" id="password" value={login.password} className="form-control  border rounded-pill" placeholder="Enter the password" onChange={(e)=>{eventLogin(e)}}/>
             </div>
 
             <div className="form-group mb-3">
-              <input type="button" value="Login" className="form-control btn btn-dark" onClick={verifyLogin}/>
+              <input type="button" value="Login" className="form-control btn btn-dark  mt-3 border rounded-pill" onClick={verifyLogin}/>
               </div>
           </div>
 

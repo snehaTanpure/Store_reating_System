@@ -2,15 +2,15 @@ import React from "react";
 import './ownerside.css'
 import { Link } from "react-router-dom";
 
-let OwnerSide=()=>{
+let OwnerSide=({user})=>{
 
     return<>
 
     <aside className="admin-sidebar p-3">
       <div className="accordion" id="adminAccordion">
 
-        <div className="mb-5">
-              <Link to="/owner" className="btn btn-outline-danger w-100"> 👲Owner Dashborad </Link>
+        <div className="mb-5 mt-5">
+              <Link to="/owner" state={{user}} className="admin-logo fs-4 text-center"> 👲Owner Dashborad </Link>
         </div>
 
       
@@ -23,7 +23,7 @@ let OwnerSide=()=>{
           </h2>
           <div id="studentCollapse" className="accordion-collapse collapse" data-bs-parent="#adminAccordion">
             <div className="accordion-body">
-              <Link to="/owner/allUser" className="btn btn-outline-danger w-100">View User</Link>
+              <Link to="/owner/allUser" state={{user}} className="btn btn-outline-danger w-100">View User</Link>
             </div>
           </div>
         </div>
@@ -38,12 +38,14 @@ let OwnerSide=()=>{
           </h2>
           <div id="usercollape" className="accordion-collapse collapse" data-bs-parent="#adminAccordion">
             <div className="accordion-body">
-              <Link to="/owner/avg" className="btn btn-outline-danger w-100 mb-2">View Store</Link>
+              <Link to="/owner/avg" state={{user}} className="btn btn-outline-danger w-100 mb-2">View Store</Link>
             </div>
           </div>
         </div>
 
-      
+      <div className="" style={{marginTop:"350px"}}>
+        <center><Link to="/login" className="btn w-50 bg-primary fw-bold text-light">Logout</Link></center>
+      </div>
       </div>
     </aside>
 

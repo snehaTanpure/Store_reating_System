@@ -4,7 +4,7 @@ import React from 'react'
 let homeback={
  
      backgroundImage: "url('Homepageimg.avif')",
-    height:"90vh",
+    height:"92vh",
     backgroundSize:'100% 100%',
     opacity:'1'
    

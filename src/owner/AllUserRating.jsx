@@ -1,11 +1,21 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
+import {allRatingData} from '../service/service.js'
 
+let AllRatingUser=({user})=>{
 
-let AllRatingUser=()=>{
+  let [all,setAll]=useState([]);
+
+    let AllUserInfo=async()=>{
+        let data=await allRatingData();
+        setAll(data);
+    }
+    useEffect(()=>{
+      AllUserInfo()
+    },[])
 
     return<>
             
-        <div className="container w-75 mt-5 bg-white p-3 shadow">
+        <div className="container w-50 mt-5 bg-white p-0  shadow">
 
         <table className="table table-striped border" >
      
@@ -18,10 +28,16 @@ let AllRatingUser=()=>{
          </thead>
 
          <tbody>
-
-            
-            
-          
+          {
+              all.map((data)=>(
+                <tr>
+                  <td>{data.name}</td>
+                  <td>{data.rating}</td>
+                  <td>{new Date(data.created_at).toLocaleDateString('en-GB')}</td>
+                </tr>
+              ))
+          }
+ 
          </tbody>
   
 

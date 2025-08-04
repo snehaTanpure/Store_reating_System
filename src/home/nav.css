@@ -4,26 +4,27 @@
   padding: 0;
   margin: 0;
   display: flex;
-  gap: 20px; /* space between links */
+  gap: 20px; 
   align-items: center;
 
 }
 
-/* Navbar container */
+
 
 .nav1 {
   display: flex;
-  justify-content:center; /* space between items */
+  justify-content:right;
   align-items: center;
   padding: 10px 20px;
-  background-color: #343a40; /* dark background */
+  background-color: #343a40; 
   color: #fff;
   width: 100%;
-  height: 60px;
+  padding: 20px;
+  padding-right:200px ;
  
 }
 
-/* Links inside navbar */
+
 .nav-item a {
   text-decoration: none;
   color: white;
@@ -34,14 +35,13 @@
   border-radius: 6px;
 }
 
-/* Hover effect */
+
 .nav-item a:hover {
   background-color: #495057;
   color: #f8f9fa;
   
 }
 
-/* Optional: Add brand/logo */
 .brand {
   font-size: 22px;
   font-weight: bold;
@@ -49,7 +49,6 @@
   text-decoration: none;
 }
 
-/* Responsive navbar */
 @media (max-width: 768px) {
   .nav {
     flex-direction: column;

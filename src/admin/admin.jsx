@@ -5,24 +5,25 @@ import ViewUser from './viewUser';
 import AddStore from './addStore';
 import ViewStore from './viewStore';
 import AdminSide from './adminSide';
-import { Routes,Route } from 'react-router-dom';
+import { Routes,Route,useLocation } from 'react-router-dom';
 let Admin=()=>{
-
+  const location = useLocation();
+  const user = location.state?.user;
     return<>
 
         <div className="container-fluid p-0">
             <div className="row">
                 <div className="col-12 d-flex">
                      <div className="col-2">
-                        <AdminSide/>
+                        <AdminSide user={user}/>
                      </div>
-                     <div className="col-10">
+                     <div className="col-10" style={{backgroundColor:"#f1faee",height:'98vh',borderRadius:"20px"}}>
                       <Routes>
-                         <Route path="/" element={<AdminDash/>}/>
-                         <Route path="addUser" element={<AddUser/>}/>
-                         <Route path="viewUser" element={<ViewUser/>}/>
-                         <Route path="addStore" element={<AddStore/>}/>
-                         <Route path="viewStore" element={<ViewStore/>}/>
+                         <Route path="/" element={<AdminDash user={user}/>}/>
+                         <Route path="addUser" element={<AddUser  user={user}/>}/>
+                         <Route path="viewUser" element={<ViewUser  user={user}/>}/>
+                         <Route path="addStore" element={<AddStore  user={user}/>}/>
+                         <Route path="viewStore" element={<ViewStore  user={user}/>}/>
                       </Routes>
                      </div>
                 </div>

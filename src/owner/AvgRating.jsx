@@ -1,13 +1,21 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 
+import {avgRatingData} from '../service/service.js'
+let AvgRating=({user})=>{
+    let [avg,setAvg]=useState([]);
 
-let AvgRating=()=>{
-
+    let AvgDetail=async()=>{
+        let data=await avgRatingData();
+        setAvg(data);
+    }
+    useEffect(()=>{
+      AvgDetail()
+    },[])
     return<>
         
-        <div className="container w-75 mt-5 bg-white p-3 shadow">
+        <div className="container w-75 mt-5 p-0 shadow">
 
-        <table className="table table-striped border" >
+        <table className="table table-striped bg-light border w-100" >
      
          <thead>
            <tr>
@@ -17,9 +25,17 @@ let AvgRating=()=>{
              <th>Total Rating</th>
            </tr>
          </thead>
-
          <tbody>
-
+        {
+          avg.map((data)=>(
+            <tr>
+              <td>{data.name}</td>
+              <td>{data.address}</td>
+              <td>{data.avg}</td>
+              <td>{data.sum}</td>
+            </tr>
+          ))
+        }
             
           
          </tbody>
