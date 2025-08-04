@@ -53,6 +53,7 @@ let verifyLogin=async()=>{
 
 
     if(result.role==='admin'){
+    
         navigate("/admin",{ state: { user: result } });
 
     }
