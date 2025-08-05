@@ -6,7 +6,7 @@ let AllRatingUser=({user})=>{
   let [all,setAll]=useState([]);
 
     let AllUserInfo=async()=>{
-        let data=await allRatingData();
+        let data=await allRatingData(user.id);
         setAll(data);
     }
     useEffect(()=>{
@@ -15,13 +15,14 @@ let AllRatingUser=({user})=>{
 
     return<>
             
-        <div className="container w-50 mt-5 bg-white p-0  shadow">
-
-        <table className="table table-striped border" >
+        <div className="container w-75 mt-5 p-3 border rounded shadow">
+          <h1 className="text-center text-danger m-3"> All User be Rating on Store</h1>
+        <table className="table table-striped border bg-light rounded shadow-lg" >
      
          <thead>
            <tr>
             <th>Name</th>
+            <th>Store name</th>
             <th>Rating</th>
             <th>Date</th>
            </tr>
@@ -32,6 +33,7 @@ let AllRatingUser=({user})=>{
               all.map((data)=>(
                 <tr>
                   <td>{data.name}</td>
+                  <td>{data.store}</td>
                   <td>{data.rating}</td>
                   <td>{new Date(data.created_at).toLocaleDateString('en-GB')}</td>
                 </tr>

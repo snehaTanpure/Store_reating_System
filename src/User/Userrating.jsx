@@ -19,7 +19,6 @@ const Userrating = ({ user }) => {
     user_id: ''
   });
 
-  // set user_id when component receives user
   useEffect(() => {
     if (user) {
       setRate((prev) => ({

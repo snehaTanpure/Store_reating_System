@@ -51,16 +51,16 @@ export let addRating=async(store_id,user_id,rating)=>{
     return report.data;
 }
 
-export let  avgRatingData=async()=>{
+export let  avgRatingData=async(id)=>{
 
-    let report=await axios.get(`${server}/avgRating`);
+    let report=await axios.get(`${server}/avgRating/${id}`);
     return report.data;
   
 }
 
-export let  allRatingData=async()=>{
+export let  allRatingData=async(id)=>{
 
-    let report=await axios.get(`${server}/allRating`);
+    let report=await axios.get(`${server}/allRating/${id}`);
     return report.data;
   
 }
@@ -68,8 +68,23 @@ export let  allRatingData=async()=>{
 
 
 export let  deleteStore=async(id)=>{
-    console.log(id);
     let report=await axios.get(`${server}/deleteStore/${id}`);
     return report.data;
   
+}
+
+
+export let countUser=async()=>{
+
+     let report=await axios.get(`${server}/totalUser`);
+    return report.data;
+
+}
+
+
+export let countStore=async()=>{
+
+     let report=await axios.get(`${server}/totalStore`);
+    return report.data;
+
 }

@@ -5,7 +5,8 @@ let AvgRating=({user})=>{
     let [avg,setAvg]=useState([]);
 
     let AvgDetail=async()=>{
-        let data=await avgRatingData();
+      console.log();
+        let data=await avgRatingData(user.id);
         setAvg(data);
     }
     useEffect(()=>{
@@ -13,8 +14,8 @@ let AvgRating=({user})=>{
     },[])
     return<>
         
-        <div className="container w-75 mt-5 p-0 shadow">
-
+        <div className="container w-75 mt-5 p-3 shadow">
+          <h1 className="text-center text-danger m-3">Average Rating of Stores</h1>
         <table className="table table-striped bg-light border w-100" >
      
          <thead>

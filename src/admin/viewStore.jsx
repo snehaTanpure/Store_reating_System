@@ -19,7 +19,8 @@ let ViewStore=({user})=>{
                 alert(result);
         }
     return<>
-            <div className="container mt-5 p-0  shadow-lg">
+            <div className="container w-75 mt-5 p-3 border rounded shadow-lg">
+                <h1 className='text-center text-danger m-3'>Store Name and it's Owner</h1>
                 <table className="table table-striped bg-light">
                     <thead>
                         <tr>
