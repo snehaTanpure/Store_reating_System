@@ -1,41 +1,94 @@
-import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Usidebar.css";
-import Userdashboard from "./Userdashboard";
-const Usidebar = ({user}) => {
 
-  return <>
-     <aside className="admin-sidebar p-3">
-      <div className="accordion" id="adminAccordion">
-        <div className="text-center mb-4">
-          <h2><Link to="/guser" state={{ user }}  className="admin-logo"> 👤User Dashboard</Link></h2>
-        </div>
+const Usidebar = ({ user }) => {
+  const [showMenu, setShowMenu] = useState(false);
 
-       <div className="accordion-item">
-          <h2 className="accordion-header" id="studentHeading">
-            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#studentCollapse" aria-expanded="false" aria-controls="studentCollapse">
-              Dashboard 👈
+  return (
+    <>
+      {/* Toggle for small screens */}
+      <button
+        className="btn btn-primary d-md-none m-2"
+        onClick={() => setShowMenu(!showMenu)}
+      >
+        ☰ Menu
+      </button>
+
+      <aside
+        className={`admin-sidebar p-3 ${showMenu ? "d-block" : "d-none"} d-md-block`}
+      >
+        <div className="accordion" id="adminAccordion">
+          {/* Logo */}
+          <div className="text-center mb-4">
+            <h2>
+              <Link
+                to="/guser"
+                state={{ user }}
+                className="admin-logo"
+                onClick={() => setShowMenu(false)}
+              >
+                👤 User Dashboard
+              </Link>
+            </h2>
+          </div>
+
+          {/* Close on small screens */}
+          {showMenu && (
+            <button
+              className="btn btn-danger d-md-none mb-3 w-100"
+              onClick={() => setShowMenu(false)}
+            >
+              ✖ Close
             </button>
-          </h2>
-          <div id="studentCollapse" className="accordion-collapse collapse" data-bs-parent="#adminAccordion">
-            <div className="accordion-body">
-  
-              <Link to="/guser/userrating" state={{ user }}  className="btn btn-outline-danger w-100">🌟User Rating Form🌟</Link>
-              {/* <Link to="/guser" className="btn btn-outline-danger w-100  mt-3" >LOGOUT</Link> */}
+          )}
+
+          {/* Dashboard Accordion */}
+          <div className="accordion-item">
+            <h2 className="accordion-header" id="studentHeading">
+              <button
+                className="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#studentCollapse"
+                aria-expanded="false"
+                aria-controls="studentCollapse"
+              >
+                Dashboard 👈
+              </button>
+            </h2>
+            <div
+              id="studentCollapse"
+              className="accordion-collapse collapse"
+              data-bs-parent="#adminAccordion"
+            >
+              <div className="accordion-body">
+                <Link
+                  to="/guser/userrating"
+                  state={{ user }}
+                  className="btn btn-outline-danger w-100"
+                  onClick={() => setShowMenu(false)}
+                >
+                  🌟 User Rating Form 🌟
+                </Link>
+              </div>
             </div>
           </div>
+
+          {/* Logout */}
+          <div className="mt-auto text-center" style={{ marginTop: "400px" }}>
+            <Link
+              to="/login"
+              className="btn w-50 bg-primary fw-bold text-light"
+              onClick={() => setShowMenu(false)}
+            >
+              Logout
+            </Link>
+          </div>
         </div>
-
-       
-       <div className="" style={{marginTop:"400px"}}>
-              <center><Link to="/login" className="btn w-50 bg-primary fw-bold text-light">Logout</Link></center>
-            </div>
-      </div>
-    </aside>
-
-
-  </>
+      </aside>
+    </>
+  );
 };
 
 export default Usidebar;

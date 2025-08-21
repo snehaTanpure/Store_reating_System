@@ -21,7 +21,9 @@ let ViewStore=({user})=>{
     return<>
             <div className="container w-75 mt-5 p-3 border rounded shadow-lg">
                 <h1 className='text-center text-danger m-3'>Store Name and it's Owner</h1>
-                <table className="table table-striped bg-light">
+ 
+            <div className="table-responsive">
+               <table className="table table-striped bg-light">
                     <thead>
                         <tr>
                             <th>Store Name</th>
@@ -45,6 +47,8 @@ let ViewStore=({user})=>{
                         }
                     </tbody>
                 </table>
+
+            </div>
             </div>
     </>
 

@@ -35,7 +35,8 @@ let AddStore=({User})=>{
             alert(result);
     }
     return<>
-           <div className="container w-50 p-3 mt-5 border shadow-lg bg-light">
+           <div className="container p-3 mt-5 border shadow-lg bg-light" style={{ maxWidth: "600px" }}>
+
               <h1>Add Store</h1>
             <div className="form">
                 <div className="form-group mb-3">

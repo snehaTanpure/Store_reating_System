@@ -1,51 +1,45 @@
-import React,{useState,useEffect} from "react";
-import {allRatingData} from '../service/service.js'
+import React, { useState, useEffect } from "react";
+import { allRatingData } from '../service/service.js';
 
-let AllRatingUser=({user})=>{
+let AllRatingUser = ({ user }) => {
+  const [all, setAll] = useState([]);
 
-  let [all,setAll]=useState([]);
+  const AllUserInfo = async () => {
+    const data = await allRatingData(user.id);
+    setAll(data);
+  };
 
-    let AllUserInfo=async()=>{
-        let data=await allRatingData(user.id);
-        setAll(data);
-    }
-    useEffect(()=>{
-      AllUserInfo()
-    },[])
+  useEffect(() => {
+    AllUserInfo();
+  }, []);
 
-    return<>
-            
-        <div className="container w-75 mt-5 p-3 border rounded shadow">
-          <h1 className="text-center text-danger m-3"> All User be Rating on Store</h1>
-        <table className="table table-striped border bg-light rounded shadow-lg" >
-     
-         <thead>
-           <tr>
-            <th>Name</th>
-            <th>Store name</th>
-            <th>Rating</th>
-            <th>Date</th>
-           </tr>
-         </thead>
-
-         <tbody>
-          {
-              all.map((data)=>(
-                <tr>
-                  <td>{data.name}</td>
-                  <td>{data.store}</td>
-                  <td>{data.rating}</td>
-                  <td>{new Date(data.created_at).toLocaleDateString('en-GB')}</td>
-                </tr>
-              ))
-          }
- 
-         </tbody>
-  
-
+  return (
+    <div className="container mt-4">
+      <div className="table-responsive shadow rounded p-3 bg-light">
+        <h3 className="text-center text-danger mb-4">All User Ratings on Store</h3>
+        <table className="table table-striped table-bordered">
+          <thead className="table-dark">
+            <tr>
+              <th>User Name</th>
+              <th>Store Name</th>
+              <th>Rating</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            {all.map((data, index) => (
+              <tr key={index}>
+                <td>{data.name}</td>
+                <td>{data.store}</td>
+                <td>{data.rating}</td>
+                <td>{new Date(data.created_at).toLocaleDateString('en-GB')}</td>
+              </tr>
+            ))}
+          </tbody>
         </table>
-        </div>
-    </>
-}
+      </div>
+    </div>
+  );
+};
 
 export default AllRatingUser;

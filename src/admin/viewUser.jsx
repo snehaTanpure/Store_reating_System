@@ -16,6 +16,8 @@ console.log(view);
     return<>
           <div className="container w-75 p-3 mt-5 border rounded shadow">
             <h1 className='text-center m-3 text-danger'>All Register Users</h1>
+           
+            <div className="table-responsive">
             <table className="table table-striped bg-light border shadow-lg">
                 <thead>
                     <tr>
@@ -37,7 +39,9 @@ console.log(view);
                 </tbody>
 
             </table>
-          </div>
+        </div>
+
+    </div>
     </>
 
 }

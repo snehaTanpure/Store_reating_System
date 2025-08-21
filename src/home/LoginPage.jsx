@@ -64,7 +64,7 @@ let verifyLogin=async()=>{
           navigate("/owner",{ state: { user: result } });
     }
     else{
-      alert("invalid user id");
+      alert("invalid userName & Password");
     }
 
 
@@ -77,7 +77,7 @@ let verifyLogin=async()=>{
       <div style={overlayStyle}>
 
 
-        <div className="container bg-light w-25 p-4 border rounded shadow-lg " style={{marginTop:'155px'}} >
+        <div className="container bg-light  p-4 border rounded shadow-lg " style={{marginTop:'155px',maxWidth:'400px'}} >
            <center>
             <h1>Login</h1>
           </center>

@@ -28,7 +28,7 @@ let Register=()=>{
     }
     // console.log(user.name,user.email,user.password,user.address,user.role);
     return<>
-            <div className="container w-50 border shadow mt-5 p-3 shadow-lg bg-light">
+            <div className="container border shadow mt-5 p-3 shadow-lg bg-light" style={{maxWidth:'600px'}}>
                 <h1>Add User</h1>
                 <div className="form">
                     <div className="form-group mb-3">

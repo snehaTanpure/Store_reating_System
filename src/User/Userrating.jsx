@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { viewstore, addRating } from '../service/service.js';
+import { viewstore, addRating } from "../service/service.js";
 
 const Userrating = ({ user }) => {
-
   const [store, setStore] = useState([]);
+  const [rate, setRate] = useState({
+    store_id: "",
+    rating: "",
+    user_id: ""
+  });
 
   useEffect(() => {
     const storeDetail = async () => {
@@ -12,12 +16,6 @@ const Userrating = ({ user }) => {
     };
     storeDetail();
   }, []);
-
-  const [rate, setRate] = useState({
-    store_id: '',
-    rating: '',
-    user_id: ''
-  });
 
   useEffect(() => {
     if (user) {
@@ -29,15 +27,13 @@ const Userrating = ({ user }) => {
   }, [user]);
 
   const addReating = (e) => {
-    setRate({
-      ...rate,
+    setRate({ ...rate,
       [e.target.name]: e.target.value
     });
   };
 
   const handleStarClick = (starValue) => {
-    setRate((prev) => ({
-      ...prev,
+    setRate((prev) => ({...prev,
       rating: starValue
     }));
   };
@@ -48,46 +44,45 @@ const Userrating = ({ user }) => {
   };
 
   return (
-    <div className="container-fluid w-50 border bg-light rounded shadow" style={{ marginTop: "130px", marginLeft: "340px" }}>
-      <h1>User Rating</h1>
-      <p className="form-subtitle">We Value Your Feedback</p>
+    <div className="container my-5 p-5">
+      <div className="row justify-content-center">
+        <div className="col-12 col-sm-10 col-md-8 col-lg-6 border bg-light rounded shadow p-4">
+          <h1 className="text-center">User Rating</h1>
+          <p className="text-center text-muted">We Value Your Feedback</p>
 
-      <div className="form">
-        {/* Store selection */}
-        <div className="form-group mb-3">
-          <label htmlFor="store_id" className="form-label">Select Store Name</label>
-          <select name="store_id" id="store_id" className="form-control" value={rate.store_id} onChange={addReating}>
-            <option value="">Select option</option>
-            {store.map((data) => (
-              <option key={data.id} value={data.id}>{data.name}</option>
-            ))}
-          </select>
-        </div>
-
-        {/* Star rating */}
-        <div className="form-group mb-3">
-          <label className="form-label">Select Rating</label>
-          <div>
-            {[1, 2, 3, 4, 5].map((star) => (
-              <span
-                // key={star}
-                onClick={() => handleStarClick(star)}
-                style={{
-                  fontSize: "2.8rem",
-                  color: star <= rate.rating ? "gold" : "gray",
-                  cursor: "pointer"
-                }}
-              >
-                ★
-              </span>
-            ))}
-            <span className="ms-2">({rate.rating || "No Rating"})</span>
+          {/* Store selection */}
+          <div className="form-group mb-3">
+            <label htmlFor="store_id" className="form-label">
+              Select Store Name
+            </label>
+            <select name="store_id" id="store_id" className="form-control" value={rate.store_id} onChange={addReating} >
+              <option value="">Select option</option>
+              {store.map((data) => (
+                <option key={data.id} value={data.id}>
+                  {data.name}
+                </option>
+              ))}
+            </select>
           </div>
-        </div>
 
-        {/* Submit */}
-        <div className="form-group mb-3">
-          <input type="button" className="form-control btn btn-primary" value="Submit" onClick={saveRating} />
+          {/* Star rating */}
+          <div className="form-group mb-3">
+            <label className="form-label">Select Rating</label>
+            <div className="d-flex align-items-center">
+              {[1, 2, 3, 4, 5].map((star) => (
+                <span key={star} onClick={() => handleStarClick(star)} 
+                style={{ fontSize: "2.2rem", color: star <= rate.rating ? "gold" : "gray", cursor: "pointer" }}>
+                  ★
+                </span>
+              ))}
+              <span className="ms-2">({rate.rating || "No Rating"})</span>
+            </div>
+          </div>
+
+          {/* Submit */}
+          <div className="form-group mb-3">
+            <input type="button" className="form-control btn btn-primary" value="Submit" onClick={saveRating} />
+          </div>
         </div>
       </div>
     </div>

@@ -1,10 +1,12 @@
 .admin-sidebar {
   background: rgba(33, 33, 33, 0.9);
-  min-height:100vh;
-  width:100%;
+  min-height: 100vh;
+  width: 100%;
   border-radius: 20px;
   overflow-y: auto;
   border-right: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease-in-out;
+  z-index: 1000;
 }
 
 .admin-logo {
@@ -46,10 +48,31 @@
   border-color: #ffc107;
 }
 
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
 ::-webkit-scrollbar-thumb {
   background-color: #555;
   border-radius: 10px;
+}
+
+/* Mobile responsive full-screen sidebar */
+@media (max-width: 768px) {
+  .admin-sidebar.d-block {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(33, 33, 33, 0.98);
+    z-index: 1050;
+    overflow-y: auto;
+    padding-bottom: 100px;
+    border-radius: 0;
+  }
+
+  .admin-sidebar .accordion-body a {
+    font-size: 1.1rem;
+  }
 }

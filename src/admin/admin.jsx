@@ -11,24 +11,26 @@ let Admin=()=>{
   const user = location.state?.user;
     return<>
 
-        <div className="container-fluid p-0">
-            <div className="row">
-                <div className="col-12 d-flex">
-                     <div className="col-2">
-                        <AdminSide user={user}/>
-                     </div>
-                     <div className="col-10" style={{backgroundColor:"#f1faee",height:'98vh',borderRadius:"20px"}}>
-                      <Routes>
-                         <Route path="/" element={<AdminDash user={user}/>}/>
-                         <Route path="addUser" element={<AddUser  user={user}/>}/>
-                         <Route path="viewUser" element={<ViewUser  user={user}/>}/>
-                         <Route path="addStore" element={<AddStore  user={user}/>}/>
-                         <Route path="viewStore" element={<ViewStore  user={user}/>}/>
-                      </Routes>
-                     </div>
-                </div>
-            </div>
-        </div>
+       <div className="container-fluid p-0">
+  <div className="row m-0">
+    {/* Sidebar */}
+    <div className="col-md-2 p-0">
+      <AdminSide user={user} />
+    </div>
+
+    {/* Content */}
+    <div className="col-md-10 p-2" style={{ backgroundColor: "#f1faee", minHeight: "100vh", borderRadius: "20px" }}>
+      <Routes>
+        <Route path="/" element={<AdminDash user={user} />} />
+        <Route path="addUser" element={<AddUser user={user} />} />
+        <Route path="viewUser" element={<ViewUser user={user} />} />
+        <Route path="addStore" element={<AddStore user={user} />} />
+        <Route path="viewStore" element={<ViewStore user={user} />} />
+      </Routes>
+    </div>
+  </div>
+</div>
+
 
     </>
 

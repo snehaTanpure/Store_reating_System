@@ -27,7 +27,8 @@ let AddUser=({user})=>{
             alert(result);
     }
     return<>
-            <div className="container w-50 border shadow mt-5 p-3 shadow-lg bg-light">
+          <div className="container p-3 mt-5 border shadow-lg bg-light" style={{ maxWidth: "600px" }}>
+
                 <h1>Add User</h1>
                 <div className="form">
                     <div className="form-group mb-3">

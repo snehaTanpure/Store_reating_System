@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 const server="http://localhost:5000"
+
 export let loginUser=async(email,password)=>{
       
     let report= await axios.post(`${server}/login`,{email,password});
